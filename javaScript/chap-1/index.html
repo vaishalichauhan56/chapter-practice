@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script> -->
+</head>
+
+<body>
+  <button type="button" onclick="btnClick()">Click me</button>
+  <!-- <ul><li><a href="http://google.com">google</a></li></ul>
+  <ul><li><a href="http://google.com">google1</a></li></ul>
+  <ul><li><a href="http://google.com">google2</a></li></ul>
+  <ul><li><a href="http://google.com">google3</a></li></ul>
+  <ul><li><a href="http://google.com">google4</a></li></ul>
+  <ul><li><a href="http://google.com">google5</a></li></ul>
+  <ul><li><a href="http://google.com">google6</a></li></ul>
+  <ul><li><a href="http://google.com">google7</a></li></ul> -->
+  <p class="nm"></p>
+  <h1>The Document Object</h1>
+  <h2>The getElementsByTagName() Method</h2>
+  <p>An unordered list:</p>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <p>The innerHTML of the second li element is:</p>
+  <p id="demo"></p>
+  <div class="one">
+    <button onclick="myfun('one')">One</button>
+  </div>
+  <div class="two">
+    <button onclick="myfun('two')">Two</button>
+  </div>
+  <div class="three">
+    <button onclick="myfun('three')">Three</button>
+  </div>
+  <button onclick="pageWhole()">Whole Page</button>
+<script type="text/javascript">
+  function myfun(paravalue) {
+    var backup = document.body.innerHTML;
+    var storeVAL = document.getElementsByClassName(paravalue);
+    document.write('storeVAL');
+    document.body.innerHTML = storeVAL;
+    window.print();
+    document.body.innerHTML = backup;
+
+    // window.print();
+  }
+
+  function pageWhole() {
+    window.print();
+    return;
+  }
+  // var i = 9;
+  // var j = 1;
+  // while (j <= 10) {
+  //   document.write(i + " *" + j + "=" + (i * j));
+  //   //    i=i+3;
+  //   j++;
+
+  //   document.write("<br>");
+  // }
+  // var str = sum();
+  // document.write(str);
+
+  // function sum() {
+  //   var a = 10;
+  //   var b = 20;
+  //   var sum = a + b;
+  //   return sum;
+  // }
+
+  // // var name = prompt("what is your name?");
+  // var name = "my name is V";
+  // console.log(name);
+  // var objJs = new String(name)
+  // if (name != null) {
+  //   document.write("name" + name);
+  // }
+
+  // function btnClick() {
+  //   var userConfrm = confirm("Do you want to visit the website?");
+  //   if (userConfrm == true) {
+  //     window.open("https://www.youtube.com/");
+  //     return true;
+  //   } else {
+  //     document.write("not open");
+  //     return false;
+  //   }
+  // }
+
+  // document.write("<br>");
+  // document.write("<br>");
+  // document.write("<br>");
+  // document.write("<br>");
+  // document.write("<br>");
+  // document.write("<br>");
+
+  // document.write("<br>");
+  // document.write(name.length);
+  // document.write("<br>");
+  // document.write(objJs.length);
+  // document.write("<br>");
+  // document.write(objJs.charAt(6));
+  // document.write(objJs.indexOf("e"));
+  // var child = document.body.children;
+  // console.log(child);
+  // var para = document.createElement("p");
+  // var textNode = document.createTextNode("create text node");
+  // para.appendChild(textNode);
+  // console.log(para);
+  // const collection = document.getElementsByTagName("li");
+  // document.getElementById("demo").innerHTML = collection[1].innerHTML;
+
+  // var child1 = document.body.children;
+  // document.write(child1);
+  // console.log(child1);
+  // var para = document.createElement("p");
+  // var txtnd = document.createTextNode("This Is created text Node");
+  // console.log(para.appendChild(txtnd));
+  // document.body.appendChild(txtnd);
+  // var list = document.querySelector("ul");
+  // console.log(list);
+  // console.log(list.firstChild);
+  // // var newsibling = ul.nextElementSibling;
+  // // console.log(newsibling);
+  // document.getElementById('demo').style.color = "red";
+  // document.getElementById('demo').setAttribute("style",
+  //   "color:red; background:yellow;"
+  // );
+
+  // document.write(window.location.pathname);
+</script>
+</body>
+
+</html>

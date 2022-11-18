@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CHAPTER 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div id="one">three button <button onclick="myfun('one')">One</button></div>
+    <div id="two">three button <button onclick="myfun('two')">Two</button></div>
+    <div id="three">
+      three button<button onclick="myfun('three')">Three</button>
+    </div>
+    <button onclick="pageWhole()">Whole Page</button>
+    <p id="clk"></p>
+    <script type="text/javascript">
+      function adding(xx, yy){
+        var d = xx + yy;
+        return d;
+      }
+      var addd = adding(5, 9);
+      document.write(addd + '<br>');
+
+      // Calculator
+      var x = 3;
+      var y = 10;
+      var add = eval("x + y") + "<br>";
+      var mult = eval("x * y") + "<br>";
+      var minu = eval("x - y") + "<br>";
+
+      document.write(add + mult + minu);
+      document.write(eval(x + y) === eval(y) + "<br>");
+      document.write(Math.floor(Math.random() * 20));
+
+      var dt = new Date();
+      document.write(dt);
+      var mont = dt.getUTCMonth() + 1;
+      var da = dt.getUTCDay();
+      var yer = dt.getUTCFullYear();
+      document.write(mont + "/" + da + "/" + yer);
+
+      var tm = dt.getTime();
+      var hr = dt.getHours();
+      var mn = dt.getMinutes();
+      document.write(hr + "/" + mn);
+      var docc = setInterval(clockTiming, 100);
+      var doce = setTimeout(clockTiming, 300);
+
+      function clockTiming() {
+        var datee = new Date();
+        var dtt = datee.toLocaleTimeString();
+        document.getElementById("clk").innerHTML = dtt;
+      }
+      function myfun(paravalue) {
+        var backup = document.body.innerHTML;
+        var storeVAL = document.getElementById(paravalue).innerHTML;
+        document.body.innerHTML = storeVAL;
+        window.print();
+        document.body.innerHTML = backup;
+
+        // window.print();
+      }
+
+      function pageWhole() {
+        window.print();
+        return;
+      }
+    </script>
+  </body>
+</html>
