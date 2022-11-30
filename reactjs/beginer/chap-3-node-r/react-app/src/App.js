@@ -1,36 +1,44 @@
-import './App.css';
-import {useState, useEffect, useReducer, useRef} from 'react';
+import "./App.css";
+import { Link } from "react-router-dom";
 
-function App() {
-  const [emotions, serEmotions] = useState("Happy");
-  const [checked, setChecked] = useReducer((checked) => !checked, false);
-  useEffect(() => { console.log(`Yes I am ${emotions}`)},[emotions]);
-  const txtTitle = useRef();
-  const txtColor = useRef();
-  const submit = (e) =>{
-    e.preventDefault();
-    const title = txtTitle.current.value;
-    const color = txtColor.current.value;
-    alert(`${title} : ${color}`);
-    txtTitle.current.value = "";
-    txtColor.current.value = "";
-  }
+function Home() {
   return (
-    <div className="App">
-      <h1>React Here {emotions}</h1>
-      <button onClick={() => serEmotions("sad")}>sad</button>
-      <input type="checkbox" value={checked} onChange={setChecked}/>
-      <label>{checked ? "Checked" : "not checked"}</label>
-
-<form onSubmit={submit}>
-  <input type="text" ref={txtTitle} width="200px"/>
-  <input type="color" ref={txtColor} width="100px"/>
-  <input type="submit" name="Submit" width="100px"/>
-  
-</form>
-
+    <div>
+      <nav>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <h1>My Website</h1>
     </div>
   );
 }
 
-export default App;
+export function About() {
+  return (
+    <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <h1>About Us</h1>
+    </div>
+  );
+}
+
+export function Contact() {
+  return (
+    <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <h1>Contact Us</h1>
+    </div>
+  );
+}
+
+export function App() {
+  return <Home />;
+}
