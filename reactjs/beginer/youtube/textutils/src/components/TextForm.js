@@ -28,17 +28,17 @@ export default function TextForm(props) {
     }
     return (
         <>
-            <h1>
+            <h2 className='mb-3'>
                 {props.heading}
-            </h1>
+            </h2>
             <div>
                 <textarea rows="8" className="w-100" value={text} onChange={handleOnChange}>
 
                 </textarea>
             </div>
-            <button className="btn btn-primary mx-2" onClick={handleUpClick} >Convert to Uppercase</button>
-            <button className="btn btn-primary mx-2" onClick={handleLwClick} >Convert to Lowercase</button>
-            <button className="btn btn-primary mx-2" onClick={handleClearClick} >Clear</button>
+            <button className="btn btn-primary ms-0 m-2" onClick={handleUpClick} >Convert to Uppercase</button>
+            <button className="btn btn-primary m-2" onClick={handleLwClick} >Convert to Lowercase</button>
+            <button className="btn btn-primary m-2" onClick={handleClearClick} >Clear</button>
             <p>{text.split(" ").length} words and {text.length} characters</p>
             <p>{0.08 * text.split(" ").length} Minutes</p>
             <h3>Preview</h3>
